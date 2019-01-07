@@ -1,0 +1,51 @@
+easy_admin:
+    site_name: '<strong>Union</strong>Admin'
+    design:
+        brand_color: 'rgba(26, 188, 156, 0.85)'
+        form_theme:
+            - '@EasyAdmin/form/bootstrap_4.html.twig'
+            - '@VichUploader/Form/fields.html.twig'
+        menu:
+            - { label: 'Homepage', route: 'index', icon: 'dashboard' }
+            - { entity: 'User', label: 'Users', icon: 'users' }
+        assets:
+            css:
+              - 'assets/css/amenu.css'
+            js:
+              - 'assets/js/amenu.js'
+    entities:
+        User:
+            class: App\Entity\User
+            list:
+                fields:
+                    - { property: 'id' }
+                    - { property: 'avatar', type: 'image', base_path: '%app.path.avatars%' }
+                    - { property: 'username' }
+                    - { property: 'email' }
+                    - { property: 'enabled' }
+                    - { property: 'lastLogin' }
+            edit:
+                fields:
+                    - { type: 'section', label: 'User Details', icon: 'user', help: 'User Information' }
+                    - { property: 'avatarFile', type: 'vich_image', label: 'Avatar' }
+                    - { property: 'username', label: 'Username' }
+                    - { property: 'plainPassword', type: 'password', label: 'Password', type_options: { required: false } }
+                    - { property: 'enabled', label: 'Activate Account' }
+                    - { property: 'roles', label: 'Account Permission', type: 'choice', type_options: { multiple: true, choices: { 'User': 'ROLE_USER', 'Admin': 'ROLE_ADMIN' } } }
+                    - { type: 'section', label: 'Contact information', icon: 'phone', help: 'Enter E-mail' }
+                    - { property: 'email', type: 'email', label: 'E-mail' }
+                form_options: { validation_groups: ['Profile'] }
+            new:
+                fields:
+                    - { type: 'section', label: 'User Details', icon: 'user', help: 'User Information' }
+                    - { property: 'username', label: 'Username' }
+                    - { property: 'plainPassword', type: 'password', label: 'Password', type_options: { required: true } }
+                    - { property: 'enabled', label: 'Activate Account' }
+                    - { property: 'roles', label: 'Account Permission', type: 'choice', type_options: { multiple: true, choices: { 'User': 'ROLE_USER', 'Admin': 'ROLE_ADMIN' } } }
+                    - { type: 'section', label: 'Contact information', icon: 'phone', help: 'Enter E-mail' }
+                    - { property: 'email', type: 'email', label: 'E-mail' }
+                form_options: { validation_groups: ['Registration'] }
+    list:
+      actions:
+          - { name: 'edit', icon: 'pencil', label: false, title: 'Edit' }
+          - { name: 'delete', icon: 'trash', label: false, title: 'Delete' }
