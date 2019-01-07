@@ -1,10 +1,8 @@
 {
     "name": "uniondev/symfony",
-    "type": "library",
     "description": "Symfony 4 Skeleton",
     "keywords": ["uniondev","skeleton"],
     "homepage": "https://github.com/uniondevru/uniondev",
-    "license": "MIT",
     "authors": [
         {
             "name": "UnionDev",
@@ -80,5 +78,7 @@
         "doctrine/doctrine-fixtures-bundle": "^3.1",
         "symfony/profiler-pack": "^1.0",
         "symfony/web-server-bundle": "4.2.*"
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
