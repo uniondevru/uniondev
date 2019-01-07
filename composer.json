@@ -3,14 +3,6 @@
     "description": "Symfony 4 Skeleton",
     "keywords": ["uniondev","skeleton"],
     "homepage": "https://github.com/uniondevru/uniondev",
-    "authors": [
-        {
-            "name": "UnionDev",
-            "email": "union.dev.s@gmail.com",
-            "homepage": "http://uniondev.ru",
-            "role": "Developer"
-        }
-    ],
     "type": "project",
     "license": "proprietary",
     "require": {

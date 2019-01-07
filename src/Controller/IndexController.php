@@ -10,6 +10,9 @@ class IndexController extends Controller
 {
   public function index()
   {
-    return $this->render('frontend/index.html.twig');
+    return $this->json([
+      'title' => 'Welcome to UnionDev Skeleton',
+      'msg' => 'This is Rest API APP'
+    ]);
   }
 }
